@@ -34,9 +34,9 @@
             MinimizeFormButton = new Button();
             CloseFormButton = new Button();
             panel3 = new Panel();
-            button1 = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            SignInButton = new Button();
+            PasswordTextField = new TextBox();
+            LoginTextField = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             WindowPanel.SuspendLayout();
             panel3.SuspendLayout();
@@ -110,54 +110,54 @@
             // panel3
             // 
             panel3.BackColor = SystemColors.ControlLight;
-            panel3.Controls.Add(button1);
+            panel3.Controls.Add(SignInButton);
             panel3.Controls.Add(pictureBox1);
-            panel3.Controls.Add(textBox2);
-            panel3.Controls.Add(textBox1);
+            panel3.Controls.Add(PasswordTextField);
+            panel3.Controls.Add(LoginTextField);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 37);
             panel3.Name = "panel3";
             panel3.Size = new Size(386, 147);
             panel3.TabIndex = 7;
             // 
-            // button1
+            // SignInButton
             // 
-            button1.BackColor = Color.FromArgb(43, 42, 41);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(152, 102);
-            button1.Name = "button1";
-            button1.Size = new Size(227, 36);
-            button1.TabIndex = 2;
-            button1.Text = "Sign In";
-            button1.UseVisualStyleBackColor = false;
+            SignInButton.BackColor = Color.FromArgb(43, 42, 41);
+            SignInButton.FlatAppearance.BorderSize = 0;
+            SignInButton.FlatStyle = FlatStyle.Flat;
+            SignInButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            SignInButton.ForeColor = Color.White;
+            SignInButton.Location = new Point(152, 102);
+            SignInButton.Name = "SignInButton";
+            SignInButton.Size = new Size(227, 36);
+            SignInButton.TabIndex = 2;
+            SignInButton.Text = "Sign In";
+            SignInButton.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // PasswordTextField
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox2.ForeColor = Color.FromArgb(43, 42, 41);
-            textBox2.Location = new Point(152, 58);
-            textBox2.Margin = new Padding(30);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.PlaceholderText = "Password";
-            textBox2.Size = new Size(227, 36);
-            textBox2.TabIndex = 1;
+            PasswordTextField.BorderStyle = BorderStyle.None;
+            PasswordTextField.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            PasswordTextField.ForeColor = Color.FromArgb(43, 42, 41);
+            PasswordTextField.Location = new Point(152, 58);
+            PasswordTextField.Margin = new Padding(30);
+            PasswordTextField.Name = "PasswordTextField";
+            PasswordTextField.PasswordChar = '*';
+            PasswordTextField.PlaceholderText = "Password";
+            PasswordTextField.Size = new Size(227, 36);
+            PasswordTextField.TabIndex = 1;
             // 
-            // textBox1
+            // LoginTextField
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.FromArgb(43, 42, 41);
-            textBox1.Location = new Point(152, 10);
-            textBox1.Margin = new Padding(30);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Login";
-            textBox1.Size = new Size(227, 36);
-            textBox1.TabIndex = 0;
+            LoginTextField.BorderStyle = BorderStyle.None;
+            LoginTextField.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            LoginTextField.ForeColor = Color.FromArgb(43, 42, 41);
+            LoginTextField.Location = new Point(152, 10);
+            LoginTextField.Margin = new Padding(30);
+            LoginTextField.Name = "LoginTextField";
+            LoginTextField.PlaceholderText = "Login";
+            LoginTextField.Size = new Size(227, 36);
+            LoginTextField.TabIndex = 0;
             // 
             // LoginForm
             // 
@@ -183,9 +183,9 @@
         private Panel panel1;
         private Panel WindowPanel;
         private Panel panel3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox PasswordTextField;
+        private TextBox LoginTextField;
+        private Button SignInButton;
         private Button MinimizeFormButton;
         private Button CloseFormButton;
     }
