@@ -7,8 +7,15 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <StartupObject>ZX_WareHouse.Program</StartupObject>
+    <ApplicationIcon>personal_logo.ico</ApplicationIcon>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <AssemblyName>ZX Warehouse</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="personal_logo.ico" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
