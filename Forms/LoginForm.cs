@@ -1,32 +1,37 @@
+﻿namespace ZX_WareHouse.Forms;
 
-namespace ZX_WareHouse.Forms
+public partial class LoginForm : Form
 {
-    public partial class LoginForm : Form
+    public LoginForm() =>
+        InitializeComponent();
+
+    private void LoginForm_Load(object sender, EventArgs e) =>
+        StartupHelper.Startup();
+
+    private void SignInButton_Click(object sender, EventArgs e)
     {
-        // Variables
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-
-        public LoginForm() =>
-            InitializeComponent();
-
-        private void CloseFormButton_Click(object sender, EventArgs e) =>
-            Close();
-
-        private void MinimizeFormButton_Click(object sender, EventArgs e) =>
-            WindowState = FormWindowState.Minimized;
-
-        private void WindowPanel_MouseMove(object sender, MouseEventArgs e)
+        if (string.IsNullOrEmpty(PasswordTextField.Text) || string.IsNullOrEmpty(LoginTextField.Text))
         {
-            if (e.Button == MouseButtons.Left)
+            ErrorMessage.Visible = true;
+            return;
+        }
+
+        string hashedPassword = HashPassword.SHA254Hash(PasswordTextField.Text);
+        bool isCorrect = ConnectionHelper.CheckUserCredentials(LoginTextField.Text, hashedPassword);
+        if (isCorrect)
+        {
+            Hide();
+            MainForm dashboard = new()
             {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
+                UserName = LoginTextField.Text,
+                LoginForm = this
+            };
+            //dashboard.FormClosing += delegate { this.Show(); };
+            dashboard.Show();
+        }
+        else
+        {
+            ErrorMessage.Visible = true;
         }
     }
 }

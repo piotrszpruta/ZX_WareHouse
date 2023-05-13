@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             label1 = new Label();
             pictureBox1 = new PictureBox();
             WindowPanel = new Panel();
             MinimizeFormButton = new Button();
             CloseFormButton = new Button();
             panel3 = new Panel();
+            ErrorMessage = new Label();
             SignInButton = new Button();
             PasswordTextField = new TextBox();
             LoginTextField = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            WindowPanel.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.personal_logo;
-            pictureBox1.Location = new Point(12, 10);
+            pictureBox1.Location = new Point(9, 7);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(130, 128);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -66,112 +67,108 @@
             // 
             // WindowPanel
             // 
-            WindowPanel.BackColor = Color.FromArgb(43, 42, 41);
-            WindowPanel.Controls.Add(MinimizeFormButton);
-            WindowPanel.Controls.Add(CloseFormButton);
-            WindowPanel.Controls.Add(label1);
-            WindowPanel.Dock = DockStyle.Top;
             WindowPanel.Location = new Point(0, 0);
             WindowPanel.Name = "WindowPanel";
-            WindowPanel.Size = new Size(386, 37);
-            WindowPanel.TabIndex = 6;
-            WindowPanel.MouseMove += WindowPanel_MouseMove;
+            WindowPanel.Size = new Size(200, 100);
+            WindowPanel.TabIndex = 8;
             // 
             // MinimizeFormButton
             // 
-            MinimizeFormButton.BackColor = Color.FromArgb(242, 242, 242);
-            MinimizeFormButton.FlatAppearance.BorderSize = 0;
-            MinimizeFormButton.FlatStyle = FlatStyle.Flat;
-            MinimizeFormButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            MinimizeFormButton.ForeColor = Color.FromArgb(43, 42, 41);
-            MinimizeFormButton.Location = new Point(277, 4);
+            MinimizeFormButton.Location = new Point(0, 0);
             MinimizeFormButton.Name = "MinimizeFormButton";
-            MinimizeFormButton.Size = new Size(48, 29);
-            MinimizeFormButton.TabIndex = 5;
-            MinimizeFormButton.Text = "━";
-            MinimizeFormButton.UseVisualStyleBackColor = false;
-            MinimizeFormButton.Click += MinimizeFormButton_Click;
+            MinimizeFormButton.Size = new Size(75, 23);
+            MinimizeFormButton.TabIndex = 0;
             // 
             // CloseFormButton
             // 
-            CloseFormButton.BackColor = Color.FromArgb(255, 50, 0);
-            CloseFormButton.FlatAppearance.BorderSize = 0;
-            CloseFormButton.FlatStyle = FlatStyle.Flat;
-            CloseFormButton.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            CloseFormButton.ForeColor = Color.FromArgb(43, 42, 41);
-            CloseFormButton.Location = new Point(331, 4);
+            CloseFormButton.Location = new Point(0, 0);
             CloseFormButton.Name = "CloseFormButton";
-            CloseFormButton.Size = new Size(48, 29);
-            CloseFormButton.TabIndex = 4;
-            CloseFormButton.Text = "✕";
-            CloseFormButton.UseVisualStyleBackColor = false;
-            CloseFormButton.Click += CloseFormButton_Click;
+            CloseFormButton.Size = new Size(75, 23);
+            CloseFormButton.TabIndex = 0;
             // 
             // panel3
             // 
-            panel3.BackColor = SystemColors.ControlLight;
+            panel3.BackColor = Color.FromArgb(43, 42, 41);
+            panel3.Controls.Add(ErrorMessage);
             panel3.Controls.Add(SignInButton);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(PasswordTextField);
             panel3.Controls.Add(LoginTextField);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 37);
+            panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(386, 147);
+            panel3.Size = new Size(353, 142);
             panel3.TabIndex = 7;
+            // 
+            // ErrorMessage
+            // 
+            ErrorMessage.AutoSize = true;
+            ErrorMessage.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            ErrorMessage.ForeColor = Color.Red;
+            ErrorMessage.Location = new Point(149, 80);
+            ErrorMessage.Name = "ErrorMessage";
+            ErrorMessage.Size = new Size(156, 17);
+            ErrorMessage.TabIndex = 5;
+            ErrorMessage.Text = "Invalid login or password";
+            ErrorMessage.Visible = false;
             // 
             // SignInButton
             // 
-            SignInButton.BackColor = Color.FromArgb(43, 42, 41);
-            SignInButton.FlatAppearance.BorderSize = 0;
+            SignInButton.BackColor = Color.FromArgb(29, 29, 28);
+            SignInButton.FlatAppearance.BorderSize = 2;
             SignInButton.FlatStyle = FlatStyle.Flat;
-            SignInButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            SignInButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SignInButton.ForeColor = Color.White;
-            SignInButton.Location = new Point(152, 102);
+            SignInButton.Location = new Point(149, 101);
             SignInButton.Name = "SignInButton";
-            SignInButton.Size = new Size(227, 36);
+            SignInButton.Size = new Size(195, 34);
             SignInButton.TabIndex = 2;
             SignInButton.Text = "Sign In";
             SignInButton.UseVisualStyleBackColor = false;
+            SignInButton.Click += SignInButton_Click;
             // 
             // PasswordTextField
             // 
-            PasswordTextField.BorderStyle = BorderStyle.None;
-            PasswordTextField.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordTextField.ForeColor = Color.FromArgb(43, 42, 41);
-            PasswordTextField.Location = new Point(152, 58);
+            PasswordTextField.BackColor = Color.FromArgb(29, 29, 28);
+            PasswordTextField.BorderStyle = BorderStyle.FixedSingle;
+            PasswordTextField.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            PasswordTextField.ForeColor = Color.White;
+            PasswordTextField.Location = new Point(149, 45);
             PasswordTextField.Margin = new Padding(30);
             PasswordTextField.Name = "PasswordTextField";
             PasswordTextField.PasswordChar = '*';
             PasswordTextField.PlaceholderText = "Password";
-            PasswordTextField.Size = new Size(227, 36);
+            PasswordTextField.Size = new Size(195, 31);
             PasswordTextField.TabIndex = 1;
             // 
             // LoginTextField
             // 
-            LoginTextField.BorderStyle = BorderStyle.None;
-            LoginTextField.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LoginTextField.ForeColor = Color.FromArgb(43, 42, 41);
-            LoginTextField.Location = new Point(152, 10);
+            LoginTextField.BackColor = Color.FromArgb(29, 29, 28);
+            LoginTextField.BorderStyle = BorderStyle.FixedSingle;
+            LoginTextField.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            LoginTextField.ForeColor = Color.White;
+            LoginTextField.Location = new Point(149, 7);
             LoginTextField.Margin = new Padding(30);
             LoginTextField.Name = "LoginTextField";
             LoginTextField.PlaceholderText = "Login";
-            LoginTextField.Size = new Size(227, 36);
+            LoginTextField.Size = new Size(195, 31);
             LoginTextField.TabIndex = 0;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(386, 184);
+            ClientSize = new Size(353, 142);
             Controls.Add(panel3);
             Controls.Add(WindowPanel);
-            FormBorderStyle = FormBorderStyle.None;
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginForm";
-            Text = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Sign In";
+            Load += LoginForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            WindowPanel.ResumeLayout(false);
-            WindowPanel.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -188,5 +185,6 @@
         private Button SignInButton;
         private Button MinimizeFormButton;
         private Button CloseFormButton;
+        private Label ErrorMessage;
     }
 }
