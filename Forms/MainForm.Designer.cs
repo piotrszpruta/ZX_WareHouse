@@ -28,18 +28,150 @@
         /// </summary>
         private void InitializeComponent()
         {
+            NavigationPanel = new FlowLayoutPanel();
+            panel1 = new Panel();
+            LogoutButton = new Button();
+            LoginUserLabel = new Label();
+            DashboardButton = new Button();
+            WarehouseButton = new Button();
+            UsersButton = new Button();
+            FillPanelContainer = new Panel();
+            NavigationPanel.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // NavigationPanel
+            // 
+            NavigationPanel.BackColor = Color.FromArgb(43, 42, 41);
+            NavigationPanel.Controls.Add(panel1);
+            NavigationPanel.Controls.Add(DashboardButton);
+            NavigationPanel.Controls.Add(WarehouseButton);
+            NavigationPanel.Controls.Add(UsersButton);
+            NavigationPanel.Dock = DockStyle.Left;
+            NavigationPanel.FlowDirection = FlowDirection.TopDown;
+            NavigationPanel.Location = new Point(0, 0);
+            NavigationPanel.Name = "NavigationPanel";
+            NavigationPanel.Size = new Size(204, 411);
+            NavigationPanel.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(LogoutButton);
+            panel1.Controls.Add(LoginUserLabel);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(197, 65);
+            panel1.TabIndex = 3;
+            // 
+            // LogoutButton
+            // 
+            LogoutButton.BackColor = Color.FromArgb(29, 29, 28);
+            LogoutButton.FlatAppearance.BorderColor = Color.White;
+            LogoutButton.FlatStyle = FlatStyle.Flat;
+            LogoutButton.ForeColor = Color.White;
+            LogoutButton.Location = new Point(9, 36);
+            LogoutButton.Name = "LogoutButton";
+            LogoutButton.Size = new Size(177, 26);
+            LogoutButton.TabIndex = 1;
+            LogoutButton.Text = "Logout";
+            LogoutButton.UseVisualStyleBackColor = false;
+            LogoutButton.Click += LogoutButton_Click;
+            // 
+            // LoginUserLabel
+            // 
+            LoginUserLabel.AutoSize = true;
+            LoginUserLabel.ForeColor = Color.White;
+            LoginUserLabel.Location = new Point(9, 6);
+            LoginUserLabel.Name = "LoginUserLabel";
+            LoginUserLabel.Size = new Size(94, 15);
+            LoginUserLabel.TabIndex = 0;
+            LoginUserLabel.Text = "Logged as: USER";
+            // 
+            // DashboardButton
+            // 
+            DashboardButton.BackColor = Color.FromArgb(29, 29, 28);
+            DashboardButton.Cursor = Cursors.Hand;
+            DashboardButton.Dock = DockStyle.Left;
+            DashboardButton.FlatAppearance.BorderSize = 0;
+            DashboardButton.FlatStyle = FlatStyle.Flat;
+            DashboardButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            DashboardButton.ForeColor = Color.White;
+            DashboardButton.Location = new Point(3, 74);
+            DashboardButton.Name = "DashboardButton";
+            DashboardButton.Size = new Size(197, 37);
+            DashboardButton.TabIndex = 0;
+            DashboardButton.Text = "Dashboard";
+            DashboardButton.UseVisualStyleBackColor = false;
+            DashboardButton.Click += DashboardButton_Click;
+            // 
+            // WarehouseButton
+            // 
+            WarehouseButton.BackColor = Color.FromArgb(29, 29, 28);
+            WarehouseButton.Cursor = Cursors.Hand;
+            WarehouseButton.Dock = DockStyle.Left;
+            WarehouseButton.FlatAppearance.BorderSize = 0;
+            WarehouseButton.FlatStyle = FlatStyle.Flat;
+            WarehouseButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            WarehouseButton.ForeColor = Color.White;
+            WarehouseButton.Location = new Point(3, 117);
+            WarehouseButton.Name = "WarehouseButton";
+            WarehouseButton.Size = new Size(197, 37);
+            WarehouseButton.TabIndex = 1;
+            WarehouseButton.Text = "Warehouse";
+            WarehouseButton.UseVisualStyleBackColor = false;
+            // 
+            // UsersButton
+            // 
+            UsersButton.BackColor = Color.FromArgb(29, 29, 28);
+            UsersButton.Cursor = Cursors.Hand;
+            UsersButton.Dock = DockStyle.Left;
+            UsersButton.FlatAppearance.BorderSize = 0;
+            UsersButton.FlatStyle = FlatStyle.Flat;
+            UsersButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            UsersButton.ForeColor = Color.White;
+            UsersButton.Location = new Point(3, 160);
+            UsersButton.Name = "UsersButton";
+            UsersButton.Size = new Size(197, 37);
+            UsersButton.TabIndex = 2;
+            UsersButton.Text = "Users";
+            UsersButton.UseVisualStyleBackColor = false;
+            UsersButton.Click += UsersButton_Click;
+            // 
+            // FillPanelContainer
+            // 
+            FillPanelContainer.BackColor = Color.FromArgb(43, 42, 41);
+            FillPanelContainer.Dock = DockStyle.Fill;
+            FillPanelContainer.Location = new Point(204, 0);
+            FillPanelContainer.Name = "FillPanelContainer";
+            FillPanelContainer.Size = new Size(620, 411);
+            FillPanelContainer.TabIndex = 2;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(824, 411);
+            Controls.Add(FillPanelContainer);
+            Controls.Add(NavigationPanel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MainForm";
             Text = "Dashboard";
+            Load += MainForm_Load;
+            NavigationPanel.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private FlowLayoutPanel NavigationPanel;
+        private Button DashboardButton;
+        private Button WarehouseButton;
+        private Button UsersButton;
+        private Panel panel1;
+        private Button LogoutButton;
+        private Label LoginUserLabel;
+        private Panel FillPanelContainer;
     }
 }

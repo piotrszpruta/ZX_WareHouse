@@ -1,11 +1,36 @@
+﻿using ZX_WareHouse.UserControls;
 
-namespace ZX_WareHouse.Forms
+namespace ZX_WareHouse.Forms;
+
+public partial class MainForm : Form
 {
-    public partial class MainForm : Form
+    private string userName;
+    public string UserName { get => userName; set => userName = value; }
+    public Form LoginForm { get; set; }
+
+    public MainForm() =>
+        InitializeComponent();
+
+    private void MainForm_Load(object sender, EventArgs e)
     {
-        public MainForm()
-        {
-            InitializeComponent();
-        }
+        LoginUserLabel.Text = "Logged as: " + userName;
+    }
+
+    private void LogoutButton_Click(object sender, EventArgs e)
+    {
+        this.Close();
+        this.LoginForm.Show();
+    }
+
+    private void DashboardButton_Click(object sender, EventArgs e)
+    {
+        FillPanelContainer.Controls.Clear();
+        FillPanelContainer.Controls.Add(new DashboardPanel());
+    }
+
+    private void UsersButton_Click(object sender, EventArgs e)
+    {
+        FillPanelContainer.Controls.Clear();
+        FillPanelContainer.Controls.Add(new UsersPanel());
     }
 }
