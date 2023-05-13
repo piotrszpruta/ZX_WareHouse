@@ -1,0 +1,10 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using System.Runtime.InteropServices;
+global using ZX_WareHouse.Forms;
+global using LiteDB;
+global using ZX_WareHouse.Helpers;
+global using ZX_WareHouse.Models;

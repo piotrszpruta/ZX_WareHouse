@@ -1,4 +1,3 @@
-using ZX_WareHouse.Forms;
 
 namespace ZX_WareHouse
 {
