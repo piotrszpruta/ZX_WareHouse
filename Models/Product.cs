@@ -8,5 +8,5 @@ internal class Product
     public string Provider { get; set; }
     public double Weight { get; set; }
     public double NettoPrice { get; set; }
-    public int Vat { get; set; }
+    public double Vat { get; set; }
 }
