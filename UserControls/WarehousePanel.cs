@@ -1,11 +1,11 @@
 ﻿namespace ZX_WareHouse.UserControls;
 
-    public partial class WarehousePanel : UserControl
+public partial class WarehousePanel : UserControl
+{
+    public WarehousePanel()
     {
-        public WarehousePanel()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
     private void WarehousePanel_Load(object sender, EventArgs e)
     {
@@ -41,11 +41,40 @@
         ProductGridView.DataSource = dt;
         ProductGridView.ClearSelection();
     }
+
+    private void ProductGridView_DoubleClick(object sender, EventArgs e)
+    {
+        if (ProductGridView.SelectedRows.Count > 0)
+        {
+            var selectedRow = ProductGridView.SelectedRows[0];
+            Product product = new()
+            {
+                Id = Convert.ToInt32(selectedRow.Cells[0].Value),
+                Model = selectedRow.Cells[1].Value.ToString(),
+                Provider = selectedRow.Cells[2].Value.ToString(),
+                Quantity = Convert.ToDouble(selectedRow.Cells[3].Value),
+                Unit = selectedRow.Cells[4].Value.ToString(),
+                NettoPrice = Convert.ToDouble(selectedRow.Cells[5].Value),
+                Vat = Convert.ToInt32(selectedRow.Cells[6].Value),
+            };
+            WarehouseProduct warehouseProduct = new()
+            {
+                product = product,
+            };
+            warehouseProduct.Show();
+            warehouseProduct.FormClosed += delegate { LoadDatabaseProducts(); };
+        }
+    }
+
     private void newDeliveryToolStripMenuItem_Click(object sender, EventArgs e)
     {
         WarehouseProduct warehouseProduct = new();
         warehouseProduct.Show();
         warehouseProduct.FormClosed += delegate { LoadDatabaseProducts(); };
     }
+
+    private void newTakeOutToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        
     }
 }
