@@ -7,6 +7,15 @@
             InitializeComponent();
         }
 
+    private void WarehousePanel_Load(object sender, EventArgs e)
+    {
+        // Set background color of menustrip
+        menuStrip1.ForeColor = Color.White;
+        menuStrip1.BackColor = Color.FromArgb(43, 42, 41);
+
+        LoadDatabaseProducts();
+    }
+
     private void LoadDatabaseProducts()
     {
         using LiteDatabase db = new(ConnectionHelper.dbDefaultPath);
