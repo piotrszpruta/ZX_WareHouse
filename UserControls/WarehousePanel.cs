@@ -6,5 +6,11 @@
         {
             InitializeComponent();
         }
+    private void newDeliveryToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        WarehouseProduct warehouseProduct = new();
+        warehouseProduct.Show();
+        warehouseProduct.FormClosed += delegate { LoadDatabaseProducts(); };
+    }
     }
 }
