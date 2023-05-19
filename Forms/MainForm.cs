@@ -25,12 +25,18 @@ public partial class MainForm : Form
     private void DashboardButton_Click(object sender, EventArgs e)
     {
         FillPanelContainer.Controls.Clear();
-        FillPanelContainer.Controls.Add(new DashboardPanel());
+        FillPanelContainer.Controls.Add(new DashboardPanel() { Dock = DockStyle.Fill });
     }
 
     private void UsersButton_Click(object sender, EventArgs e)
     {
         FillPanelContainer.Controls.Clear();
-        FillPanelContainer.Controls.Add(new UsersPanel());
+        FillPanelContainer.Controls.Add(new SettingsPanel() { Dock = DockStyle.Fill });
+    }
+
+    private void WarehouseButton_Click(object sender, EventArgs e)
+    {
+        FillPanelContainer.Controls.Clear();
+        FillPanelContainer.Controls.Add(new WarehousePanel() { Dock = DockStyle.Fill });
     }
 }

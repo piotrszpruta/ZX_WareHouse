@@ -51,7 +51,7 @@
             NavigationPanel.FlowDirection = FlowDirection.TopDown;
             NavigationPanel.Location = new Point(0, 0);
             NavigationPanel.Name = "NavigationPanel";
-            NavigationPanel.Size = new Size(204, 411);
+            NavigationPanel.Size = new Size(204, 459);
             NavigationPanel.TabIndex = 1;
             // 
             // panel1
@@ -119,6 +119,7 @@
             WarehouseButton.TabIndex = 1;
             WarehouseButton.Text = "Warehouse";
             WarehouseButton.UseVisualStyleBackColor = false;
+            WarehouseButton.Click += WarehouseButton_Click;
             // 
             // UsersButton
             // 
@@ -133,7 +134,7 @@
             UsersButton.Name = "UsersButton";
             UsersButton.Size = new Size(197, 37);
             UsersButton.TabIndex = 2;
-            UsersButton.Text = "Users";
+            UsersButton.Text = "Settings";
             UsersButton.UseVisualStyleBackColor = false;
             UsersButton.Click += UsersButton_Click;
             // 
@@ -143,14 +144,14 @@
             FillPanelContainer.Dock = DockStyle.Fill;
             FillPanelContainer.Location = new Point(204, 0);
             FillPanelContainer.Name = "FillPanelContainer";
-            FillPanelContainer.Size = new Size(620, 411);
+            FillPanelContainer.Size = new Size(860, 459);
             FillPanelContainer.TabIndex = 2;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(824, 411);
+            ClientSize = new Size(1064, 459);
             Controls.Add(FillPanelContainer);
             Controls.Add(NavigationPanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
