@@ -38,6 +38,7 @@ class StartupHelper
     private static void InsertDefaultUser()
     {
         using LiteDatabase db = new(ConnectionHelper.dbDefaultPath);
+        // Insert demo user
         var usersCol = db.GetCollection<User>("users");
         var user = new User
         {
@@ -46,15 +47,16 @@ class StartupHelper
             Email = "admin@admin.com"
         };
 
+        // Insert demo product
         var productsCol = db.GetCollection<Product>("products");
         var demoProduct = new Product
         {
             Model = "Demo product #1",
             Provider = "Provider #1",
+            Quantity = 1000,
             Vat = 23,
-            NettoPrice = 1000,
-            SKU = "DMPROD1",
-            Weight = 18.5
+            Unit = "kilograms",
+            NettoPrice = 1000
         };
 
         usersCol.Insert(user);
