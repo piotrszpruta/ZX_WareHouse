@@ -1,6 +1,6 @@
 ﻿namespace ZX_WareHouse.UserControls
 {
-    partial class UsersPanel
+    partial class SettingsPanel
     {
         /// <summary> 
         /// Required designer variable.

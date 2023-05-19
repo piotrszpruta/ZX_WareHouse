@@ -2,9 +2,9 @@
 
 namespace ZX_WareHouse.UserControls;
 
-public partial class UsersPanel : UserControl
+public partial class SettingsPanel : UserControl
 {
-    public UsersPanel() =>
+    public SettingsPanel() =>
         InitializeComponent();
 
     private void UsersPanel_Load(object sender, EventArgs e)
