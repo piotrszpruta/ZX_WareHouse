@@ -1,6 +1,6 @@
 ﻿namespace ZX_WareHouse.Models;
 
-internal class Product
+public class Product
 {
     public int Id { get; set; }
     public string SKU { get; set; }
