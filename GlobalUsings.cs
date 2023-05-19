@@ -7,4 +7,5 @@ global using System.Runtime.InteropServices;
 global using ZX_WareHouse.Forms;
 global using LiteDB;
 global using ZX_WareHouse.Helpers;
+global using System.Data;
 global using ZX_WareHouse.Models;
