@@ -42,6 +42,8 @@ class StartupHelper
         var usersCol = db.GetCollection<User>("users");
         var user = new User
         {
+            FirstName = "Test",
+            LastName = "User",
             Name = "admin",
             Password = HashPassword.SHA254Hash("admin"),
             Email = "admin@admin.com"
