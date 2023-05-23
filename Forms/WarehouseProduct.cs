@@ -64,6 +64,7 @@ public partial class WarehouseProduct : Form
             productCol.Update(product);
         }
         db.Dispose();
+        MessageBox.Show("Product saved");
         this.Close();
     }
 }

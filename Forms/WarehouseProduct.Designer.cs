@@ -36,6 +36,7 @@
             UnitComboBox = new ComboBox();
             SaveProductToWarehouse = new Button();
             panel1 = new Panel();
+            IdLabel = new Label();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
@@ -44,7 +45,6 @@
             label2 = new Label();
             QuantityTextBox = new TextBox();
             VatComboBox = new ComboBox();
-            IdLabel = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -152,6 +152,15 @@
             panel1.Size = new Size(462, 308);
             panel1.TabIndex = 11;
             // 
+            // IdLabel
+            // 
+            IdLabel.AutoSize = true;
+            IdLabel.Location = new Point(399, 279);
+            IdLabel.Name = "IdLabel";
+            IdLabel.Size = new Size(40, 15);
+            IdLabel.TabIndex = 19;
+            IdLabel.Text = "           ";
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -233,15 +242,6 @@
             VatComboBox.Size = new Size(168, 31);
             VatComboBox.TabIndex = 11;
             VatComboBox.Text = "VAT (%)";
-            // 
-            // IdLabel
-            // 
-            IdLabel.AutoSize = true;
-            IdLabel.Location = new Point(399, 279);
-            IdLabel.Name = "IdLabel";
-            IdLabel.Size = new Size(40, 15);
-            IdLabel.TabIndex = 19;
-            IdLabel.Text = "           ";
             // 
             // WarehouseProduct
             // 
