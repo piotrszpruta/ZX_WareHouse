@@ -48,6 +48,7 @@
             AddressTextBox = new TextBox();
             AddProductToListButton = new Button();
             ProductGridView = new DataGridView();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)QuantityNumericValue).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ProductGridView).BeginInit();
             SuspendLayout();
@@ -144,11 +145,11 @@
             QuantityStatusLabel.AutoSize = true;
             QuantityStatusLabel.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
             QuantityStatusLabel.ForeColor = SystemColors.ActiveBorder;
-            QuantityStatusLabel.Location = new Point(12, 195);
+            QuantityStatusLabel.Location = new Point(176, 195);
             QuantityStatusLabel.Name = "QuantityStatusLabel";
-            QuantityStatusLabel.Size = new Size(132, 15);
+            QuantityStatusLabel.Size = new Size(31, 15);
             QuantityStatusLabel.TabIndex = 20;
-            QuantityStatusLabel.Text = "Available quantity: 2506";
+            QuantityStatusLabel.Text = "2506";
             // 
             // label4
             // 
@@ -289,12 +290,24 @@
             ProductGridView.Size = new Size(482, 148);
             ProductGridView.TabIndex = 28;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ActiveBorder;
+            label8.Location = new Point(12, 195);
+            label8.Name = "label8";
+            label8.Size = new Size(105, 15);
+            label8.TabIndex = 29;
+            label8.Text = "Available quantity:";
+            // 
             // ReleaseForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(43, 42, 41);
             ClientSize = new Size(507, 471);
+            Controls.Add(label8);
             Controls.Add(ProductGridView);
             Controls.Add(AddProductToListButton);
             Controls.Add(label7);
@@ -341,5 +354,6 @@
         private TextBox AddressTextBox;
         private Button AddProductToListButton;
         private DataGridView ProductGridView;
+        private Label label8;
     }
 }

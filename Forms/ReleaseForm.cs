@@ -43,8 +43,17 @@ public partial class ReleaseForm : Form
                 if (msg == DialogResult.Yes)
                 {
                     item.Cells[1].Value = ProductComboBox.SelectedItem.ToString();
-                    item.Cells[2].Value = Convert.ToDecimal(item.Cells[2].Value) + QuantityNumericValue.Value;
-                    item.Cells[3].Value = selectedUnits;
+                    var sumValues = Convert.ToDecimal(item.Cells[2].Value) + QuantityNumericValue.Value;
+                    var quantityStatusLb = Convert.ToDecimal(QuantityStatusLabel.Text);
+                    if (sumValues <= quantityStatusLb)
+                    {
+                        item.Cells[2].Value = sumValues;
+                        item.Cells[3].Value = selectedUnits;
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Limit is exceed! \nYour max quantity in warehouse is: {quantityStatusLb} {item.Cells[3].Value}", "Exceed limit", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else if (msg == DialogResult.No)
                 {
@@ -66,7 +75,7 @@ public partial class ReleaseForm : Form
         string productName = ProductComboBox.SelectedItem.ToString();
         var prodCol = db.GetCollection<Product>("products");
         var product = prodCol.Query().Where(x => x.Model.Equals(productName)).First();
-        QuantityStatusLabel.Text = "Available quantity: " + product.Quantity.ToString() + " " + product.Unit;
+        QuantityStatusLabel.Text = product.Quantity.ToString();
         QuantityNumericValue.Maximum = (decimal)product.Quantity;
         selectedUnits = product.Unit;
         db.Dispose();
