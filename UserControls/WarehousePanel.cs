@@ -76,6 +76,7 @@ public partial class WarehousePanel : UserControl
 
     private void newTakeOutToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        
+        ReleaseForm releaseForm = new();
+        releaseForm.Show();
     }
 }
