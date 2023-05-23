@@ -40,6 +40,7 @@ public partial class WarehousePanel : UserControl
 
         ProductGridView.DataSource = dt;
         ProductGridView.ClearSelection();
+        db.Dispose();
     }
 
     private void ProductGridView_DoubleClick(object sender, EventArgs e)

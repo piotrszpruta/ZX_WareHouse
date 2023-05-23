@@ -61,5 +61,6 @@ class StartupHelper
 
         usersCol.Insert(user);
         productsCol.Insert(demoProduct);
+        db.Dispose();
     }
 }

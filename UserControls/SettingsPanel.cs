@@ -23,5 +23,6 @@ public partial class SettingsPanel : UserControl
         }
 
         UserGridView.DataSource = dt;
+        db.Dispose();
     }
 }
