@@ -22,12 +22,6 @@ public partial class MainForm : Form
         this.LoginForm.Show();
     }
 
-    private void DashboardButton_Click(object sender, EventArgs e)
-    {
-        FillPanelContainer.Controls.Clear();
-        FillPanelContainer.Controls.Add(new DashboardPanel() { Dock = DockStyle.Fill });
-    }
-
     private void UsersButton_Click(object sender, EventArgs e)
     {
         FillPanelContainer.Controls.Clear();

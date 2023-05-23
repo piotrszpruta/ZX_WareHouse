@@ -33,7 +33,6 @@
             panel1 = new Panel();
             LogoutButton = new Button();
             LoginUserLabel = new Label();
-            DashboardButton = new Button();
             WarehouseButton = new Button();
             UsersButton = new Button();
             FillPanelContainer = new Panel();
@@ -45,7 +44,6 @@
             // 
             NavigationPanel.BackColor = Color.FromArgb(43, 42, 41);
             NavigationPanel.Controls.Add(panel1);
-            NavigationPanel.Controls.Add(DashboardButton);
             NavigationPanel.Controls.Add(WarehouseButton);
             NavigationPanel.Controls.Add(UsersButton);
             NavigationPanel.Dock = DockStyle.Left;
@@ -88,23 +86,6 @@
             LoginUserLabel.TabIndex = 0;
             LoginUserLabel.Text = "Logged as: USER";
             // 
-            // DashboardButton
-            // 
-            DashboardButton.BackColor = Color.FromArgb(29, 29, 28);
-            DashboardButton.Cursor = Cursors.Hand;
-            DashboardButton.Dock = DockStyle.Left;
-            DashboardButton.FlatAppearance.BorderSize = 0;
-            DashboardButton.FlatStyle = FlatStyle.Flat;
-            DashboardButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            DashboardButton.ForeColor = Color.White;
-            DashboardButton.Location = new Point(3, 74);
-            DashboardButton.Name = "DashboardButton";
-            DashboardButton.Size = new Size(197, 37);
-            DashboardButton.TabIndex = 0;
-            DashboardButton.Text = "Dashboard";
-            DashboardButton.UseVisualStyleBackColor = false;
-            DashboardButton.Click += DashboardButton_Click;
-            // 
             // WarehouseButton
             // 
             WarehouseButton.BackColor = Color.FromArgb(29, 29, 28);
@@ -114,7 +95,7 @@
             WarehouseButton.FlatStyle = FlatStyle.Flat;
             WarehouseButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             WarehouseButton.ForeColor = Color.White;
-            WarehouseButton.Location = new Point(3, 117);
+            WarehouseButton.Location = new Point(3, 74);
             WarehouseButton.Name = "WarehouseButton";
             WarehouseButton.Size = new Size(197, 37);
             WarehouseButton.TabIndex = 1;
@@ -131,7 +112,7 @@
             UsersButton.FlatStyle = FlatStyle.Flat;
             UsersButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             UsersButton.ForeColor = Color.White;
-            UsersButton.Location = new Point(3, 160);
+            UsersButton.Location = new Point(3, 117);
             UsersButton.Name = "UsersButton";
             UsersButton.Size = new Size(197, 37);
             UsersButton.TabIndex = 2;
@@ -169,7 +150,6 @@
         #endregion
 
         private FlowLayoutPanel NavigationPanel;
-        private Button DashboardButton;
         private Button WarehouseButton;
         private Button UsersButton;
         private Panel panel1;
