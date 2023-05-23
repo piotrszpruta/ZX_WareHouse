@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            button1 = new Button();
-            PermissionsPanel = new GroupBox();
-            checkBox4 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            RemoveUserButton = new Button();
+            SaveUserButton = new Button();
             groupBox2 = new GroupBox();
+            GeneratePasswordButton = new Button();
+            PasswordTextBox = new TextBox();
             SecondNameTextField = new TextBox();
             FirstNameTextField = new TextBox();
             EmailTextField = new TextBox();
@@ -45,7 +45,6 @@
             UserGridView = new DataGridView();
             label1 = new Label();
             panel1.SuspendLayout();
-            PermissionsPanel.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)UserGridView).BeginInit();
@@ -54,8 +53,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(43, 42, 41);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(PermissionsPanel);
+            panel1.Controls.Add(RemoveUserButton);
+            panel1.Controls.Add(SaveUserButton);
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(label1);
@@ -65,82 +64,42 @@
             panel1.Size = new Size(620, 411);
             panel1.TabIndex = 0;
             // 
-            // button1
+            // RemoveUserButton
             // 
-            button1.BackColor = Color.FromArgb(29, 29, 28);
-            button1.FlatAppearance.BorderColor = Color.White;
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(515, 6);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 31);
-            button1.TabIndex = 4;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = false;
+            RemoveUserButton.BackColor = Color.FromArgb(29, 29, 28);
+            RemoveUserButton.FlatAppearance.BorderColor = Color.White;
+            RemoveUserButton.FlatAppearance.BorderSize = 2;
+            RemoveUserButton.FlatStyle = FlatStyle.Flat;
+            RemoveUserButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            RemoveUserButton.ForeColor = Color.White;
+            RemoveUserButton.Location = new Point(413, 6);
+            RemoveUserButton.Name = "RemoveUserButton";
+            RemoveUserButton.Size = new Size(96, 31);
+            RemoveUserButton.TabIndex = 5;
+            RemoveUserButton.Text = "Remove";
+            RemoveUserButton.UseVisualStyleBackColor = false;
+            RemoveUserButton.Click += RemoveUserButton_Click;
             // 
-            // PermissionsPanel
+            // SaveUserButton
             // 
-            PermissionsPanel.Controls.Add(checkBox4);
-            PermissionsPanel.Controls.Add(checkBox3);
-            PermissionsPanel.Controls.Add(checkBox2);
-            PermissionsPanel.Controls.Add(checkBox1);
-            PermissionsPanel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            PermissionsPanel.ForeColor = Color.White;
-            PermissionsPanel.Location = new Point(426, 237);
-            PermissionsPanel.Name = "PermissionsPanel";
-            PermissionsPanel.Size = new Size(191, 171);
-            PermissionsPanel.TabIndex = 3;
-            PermissionsPanel.TabStop = false;
-            PermissionsPanel.Text = "Permissions";
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.FlatStyle = FlatStyle.Flat;
-            checkBox4.Location = new Point(42, 128);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(108, 25);
-            checkBox4.TabIndex = 3;
-            checkBox4.Text = "checkBox4";
-            checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.FlatStyle = FlatStyle.Flat;
-            checkBox3.Location = new Point(42, 97);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(108, 25);
-            checkBox3.TabIndex = 2;
-            checkBox3.Text = "checkBox3";
-            checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.FlatStyle = FlatStyle.Flat;
-            checkBox2.Location = new Point(42, 66);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(108, 25);
-            checkBox2.TabIndex = 1;
-            checkBox2.Text = "checkBox2";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.FlatStyle = FlatStyle.Flat;
-            checkBox1.Location = new Point(42, 35);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(108, 25);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
+            SaveUserButton.BackColor = Color.FromArgb(29, 29, 28);
+            SaveUserButton.FlatAppearance.BorderColor = Color.White;
+            SaveUserButton.FlatAppearance.BorderSize = 2;
+            SaveUserButton.FlatStyle = FlatStyle.Flat;
+            SaveUserButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            SaveUserButton.ForeColor = Color.White;
+            SaveUserButton.Location = new Point(515, 6);
+            SaveUserButton.Name = "SaveUserButton";
+            SaveUserButton.Size = new Size(96, 31);
+            SaveUserButton.TabIndex = 4;
+            SaveUserButton.Text = "Save";
+            SaveUserButton.UseVisualStyleBackColor = false;
+            SaveUserButton.Click += SaveUserButton_Click;
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(GeneratePasswordButton);
+            groupBox2.Controls.Add(PasswordTextBox);
             groupBox2.Controls.Add(SecondNameTextField);
             groupBox2.Controls.Add(FirstNameTextField);
             groupBox2.Controls.Add(EmailTextField);
@@ -149,10 +108,37 @@
             groupBox2.ForeColor = Color.White;
             groupBox2.Location = new Point(3, 237);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(417, 171);
+            groupBox2.Size = new Size(614, 171);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "User data";
+            // 
+            // GeneratePasswordButton
+            // 
+            GeneratePasswordButton.BackColor = Color.FromArgb(29, 29, 28);
+            GeneratePasswordButton.FlatAppearance.BorderColor = Color.White;
+            GeneratePasswordButton.FlatAppearance.BorderSize = 2;
+            GeneratePasswordButton.FlatStyle = FlatStyle.Flat;
+            GeneratePasswordButton.Location = new Point(226, 95);
+            GeneratePasswordButton.Name = "GeneratePasswordButton";
+            GeneratePasswordButton.Size = new Size(170, 40);
+            GeneratePasswordButton.TabIndex = 6;
+            GeneratePasswordButton.Text = "Generate password";
+            GeneratePasswordButton.UseVisualStyleBackColor = false;
+            GeneratePasswordButton.Click += GeneratePasswordButton_Click;
+            // 
+            // PasswordTextBox
+            // 
+            PasswordTextBox.BackColor = Color.FromArgb(29, 29, 28);
+            PasswordTextBox.BorderStyle = BorderStyle.FixedSingle;
+            PasswordTextBox.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            PasswordTextBox.ForeColor = Color.White;
+            PasswordTextBox.Location = new Point(39, 100);
+            PasswordTextBox.Margin = new Padding(30);
+            PasswordTextBox.Name = "PasswordTextBox";
+            PasswordTextBox.PlaceholderText = "Password";
+            PasswordTextBox.Size = new Size(170, 31);
+            PasswordTextBox.TabIndex = 5;
             // 
             // SecondNameTextField
             // 
@@ -160,7 +146,7 @@
             SecondNameTextField.BorderStyle = BorderStyle.FixedSingle;
             SecondNameTextField.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             SecondNameTextField.ForeColor = Color.White;
-            SecondNameTextField.Location = new Point(214, 100);
+            SecondNameTextField.Location = new Point(417, 100);
             SecondNameTextField.Margin = new Padding(30);
             SecondNameTextField.Name = "SecondNameTextField";
             SecondNameTextField.PlaceholderText = "Last name";
@@ -173,7 +159,7 @@
             FirstNameTextField.BorderStyle = BorderStyle.FixedSingle;
             FirstNameTextField.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             FirstNameTextField.ForeColor = Color.White;
-            FirstNameTextField.Location = new Point(27, 100);
+            FirstNameTextField.Location = new Point(417, 45);
             FirstNameTextField.Margin = new Padding(30);
             FirstNameTextField.Name = "FirstNameTextField";
             FirstNameTextField.PlaceholderText = "Firstname";
@@ -186,7 +172,7 @@
             EmailTextField.BorderStyle = BorderStyle.FixedSingle;
             EmailTextField.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             EmailTextField.ForeColor = Color.White;
-            EmailTextField.Location = new Point(214, 45);
+            EmailTextField.Location = new Point(226, 45);
             EmailTextField.Margin = new Padding(30);
             EmailTextField.Name = "EmailTextField";
             EmailTextField.PlaceholderText = "Email";
@@ -199,7 +185,7 @@
             NameTextField.BorderStyle = BorderStyle.FixedSingle;
             NameTextField.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             NameTextField.ForeColor = Color.White;
-            NameTextField.Location = new Point(27, 45);
+            NameTextField.Location = new Point(39, 45);
             NameTextField.Margin = new Padding(30);
             NameTextField.Name = "NameTextField";
             NameTextField.PlaceholderText = "Login";
@@ -226,10 +212,19 @@
             UserGridView.AllowUserToDeleteRows = false;
             UserGridView.AllowUserToResizeColumns = false;
             UserGridView.AllowUserToResizeRows = false;
-            UserGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 42, 41);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(43, 42, 41);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            UserGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            UserGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             UserGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             UserGridView.BackgroundColor = Color.FromArgb(43, 42, 41);
             UserGridView.BorderStyle = BorderStyle.None;
+            UserGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            UserGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             UserGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             UserGridView.Dock = DockStyle.Fill;
             UserGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -238,15 +233,28 @@
             UserGridView.MultiSelect = false;
             UserGridView.Name = "UserGridView";
             UserGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(43, 42, 41);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            UserGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(43, 42, 41);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            UserGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             UserGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 42, 41);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(43, 42, 41);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            UserGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            UserGridView.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            UserGridView.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(43, 42, 41);
+            UserGridView.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
+            UserGridView.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.White;
+            UserGridView.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(43, 42, 41);
+            UserGridView.RowTemplate.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             UserGridView.RowTemplate.Height = 25;
             UserGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             UserGridView.ShowCellErrors = false;
@@ -254,7 +262,7 @@
             UserGridView.ShowEditingIcon = false;
             UserGridView.ShowRowErrors = false;
             UserGridView.Size = new Size(608, 170);
-            UserGridView.TabIndex = 0;
+            UserGridView.TabIndex = 1;
             // 
             // label1
             // 
@@ -268,18 +276,16 @@
             label1.Text = "Users Management";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // UsersPanel
+            // SettingsPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
-            Name = "UsersPanel";
+            Name = "SettingsPanel";
             Size = new Size(620, 411);
             Load += UsersPanel_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            PermissionsPanel.ResumeLayout(false);
-            PermissionsPanel.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -292,17 +298,15 @@
         private Panel panel1;
         private Label label1;
         private GroupBox groupBox1;
-        private GroupBox PermissionsPanel;
         private GroupBox groupBox2;
-        private DataGridView UserGridView;
         private TextBox FirstNameTextField;
         private TextBox EmailTextField;
         private TextBox NameTextField;
-        private Button button1;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private Button SaveUserButton;
         private TextBox SecondNameTextField;
+        private TextBox PasswordTextBox;
+        private Button GeneratePasswordButton;
+        private Button RemoveUserButton;
+        private DataGridView UserGridView;
     }
 }
