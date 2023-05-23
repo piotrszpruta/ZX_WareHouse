@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             NavigationPanel = new FlowLayoutPanel();
             panel1 = new Panel();
             LogoutButton = new Button();
@@ -155,6 +156,7 @@
             Controls.Add(FillPanelContainer);
             Controls.Add(NavigationPanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             Text = "Dashboard";
             Load += MainForm_Load;
