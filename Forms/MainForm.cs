@@ -16,12 +16,6 @@ public partial class MainForm : Form
         LoginUserLabel.Text = "Logged as: " + userName;
     }
 
-    private void LogoutButton_Click(object sender, EventArgs e)
-    {
-        this.Close();
-        this.LoginForm.Show();
-    }
-
     private void UsersButton_Click(object sender, EventArgs e)
     {
         FillPanelContainer.Controls.Clear();

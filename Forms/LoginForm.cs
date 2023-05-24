@@ -26,7 +26,7 @@ public partial class LoginForm : Form
                 UserName = LoginTextField.Text,
                 LoginForm = this
             };
-            //dashboard.FormClosing += delegate { this.Show(); };
+            dashboard.FormClosing += delegate { this.Close(); };
             dashboard.Show();
         }
         else

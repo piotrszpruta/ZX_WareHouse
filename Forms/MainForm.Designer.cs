@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             NavigationPanel = new FlowLayoutPanel();
             panel1 = new Panel();
-            LogoutButton = new Button();
             LoginUserLabel = new Label();
             WarehouseButton = new Button();
             UsersButton = new Button();
@@ -55,26 +54,11 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(LogoutButton);
             panel1.Controls.Add(LoginUserLabel);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(197, 65);
+            panel1.Size = new Size(197, 31);
             panel1.TabIndex = 3;
-            // 
-            // LogoutButton
-            // 
-            LogoutButton.BackColor = Color.FromArgb(29, 29, 28);
-            LogoutButton.FlatAppearance.BorderColor = Color.White;
-            LogoutButton.FlatStyle = FlatStyle.Flat;
-            LogoutButton.ForeColor = Color.White;
-            LogoutButton.Location = new Point(9, 36);
-            LogoutButton.Name = "LogoutButton";
-            LogoutButton.Size = new Size(177, 26);
-            LogoutButton.TabIndex = 1;
-            LogoutButton.Text = "Logout";
-            LogoutButton.UseVisualStyleBackColor = false;
-            LogoutButton.Click += LogoutButton_Click;
             // 
             // LoginUserLabel
             // 
@@ -95,7 +79,7 @@
             WarehouseButton.FlatStyle = FlatStyle.Flat;
             WarehouseButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             WarehouseButton.ForeColor = Color.White;
-            WarehouseButton.Location = new Point(3, 74);
+            WarehouseButton.Location = new Point(3, 40);
             WarehouseButton.Name = "WarehouseButton";
             WarehouseButton.Size = new Size(197, 37);
             WarehouseButton.TabIndex = 1;
@@ -112,7 +96,7 @@
             UsersButton.FlatStyle = FlatStyle.Flat;
             UsersButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             UsersButton.ForeColor = Color.White;
-            UsersButton.Location = new Point(3, 117);
+            UsersButton.Location = new Point(3, 83);
             UsersButton.Name = "UsersButton";
             UsersButton.Size = new Size(197, 37);
             UsersButton.TabIndex = 2;
@@ -153,7 +137,6 @@
         private Button WarehouseButton;
         private Button UsersButton;
         private Panel panel1;
-        private Button LogoutButton;
         private Label LoginUserLabel;
         private Panel FillPanelContainer;
     }
