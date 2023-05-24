@@ -32,9 +32,11 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            ClearButton = new Button();
             RemoveUserButton = new Button();
             SaveUserButton = new Button();
             groupBox2 = new GroupBox();
+            selectedID = new Label();
             GeneratePasswordButton = new Button();
             PasswordTextBox = new TextBox();
             SecondNameTextField = new TextBox();
@@ -53,6 +55,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(43, 42, 41);
+            panel1.Controls.Add(ClearButton);
             panel1.Controls.Add(RemoveUserButton);
             panel1.Controls.Add(SaveUserButton);
             panel1.Controls.Add(groupBox2);
@@ -63,6 +66,22 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(620, 411);
             panel1.TabIndex = 0;
+            // 
+            // ClearButton
+            // 
+            ClearButton.BackColor = Color.FromArgb(29, 29, 28);
+            ClearButton.FlatAppearance.BorderColor = Color.White;
+            ClearButton.FlatAppearance.BorderSize = 2;
+            ClearButton.FlatStyle = FlatStyle.Flat;
+            ClearButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            ClearButton.ForeColor = Color.White;
+            ClearButton.Location = new Point(311, 6);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(96, 31);
+            ClearButton.TabIndex = 6;
+            ClearButton.Text = "Clear";
+            ClearButton.UseVisualStyleBackColor = false;
+            ClearButton.Click += ClearButton_Click;
             // 
             // RemoveUserButton
             // 
@@ -98,6 +117,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(selectedID);
             groupBox2.Controls.Add(GeneratePasswordButton);
             groupBox2.Controls.Add(PasswordTextBox);
             groupBox2.Controls.Add(SecondNameTextField);
@@ -112,6 +132,16 @@
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "User data";
+            // 
+            // selectedID
+            // 
+            selectedID.AutoSize = true;
+            selectedID.Location = new Point(3, 25);
+            selectedID.Name = "selectedID";
+            selectedID.Size = new Size(27, 21);
+            selectedID.TabIndex = 7;
+            selectedID.Text = "ID";
+            selectedID.Visible = false;
             // 
             // GeneratePasswordButton
             // 
@@ -263,6 +293,7 @@
             UserGridView.ShowRowErrors = false;
             UserGridView.Size = new Size(608, 170);
             UserGridView.TabIndex = 1;
+            UserGridView.SelectionChanged += UserGridView_SelectionChanged;
             // 
             // label1
             // 
@@ -308,5 +339,7 @@
         private Button GeneratePasswordButton;
         private Button RemoveUserButton;
         private DataGridView UserGridView;
+        private Button ClearButton;
+        private Label selectedID;
     }
 }

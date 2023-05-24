@@ -36,14 +36,31 @@ public partial class SettingsPanel : UserControl
     {
         using LiteDatabase db = new(connectionString: ConnectionHelper.dbDefaultPath);
         var usersCol = db.GetCollection<User>("users");
-        usersCol.Insert(new User
+        if (string.IsNullOrEmpty(selectedID.Text))
         {
-            Name = NameTextField.Text,
-            Email = EmailTextField.Text,
-            FirstName = FirstNameTextField.Text,
-            LastName = SecondNameTextField.Text,
-            Password = HashPassword.SHA254Hash(PasswordTextBox.Text)
-        });
+            usersCol.Insert(new User
+            {
+                Name = NameTextField.Text,
+                Email = EmailTextField.Text,
+                FirstName = FirstNameTextField.Text,
+                LastName = SecondNameTextField.Text,
+                Password = HashPassword.SHA254Hash(PasswordTextBox.Text)
+            });
+        }
+        else
+        {
+            var userUpdate = new User
+            {
+                Id = Convert.ToInt32(selectedID.Text),
+                Name = NameTextField.Text,
+                Email = EmailTextField.Text,
+                FirstName = FirstNameTextField.Text,
+                LastName = SecondNameTextField.Text,
+                Password = HashPassword.SHA254Hash(PasswordTextBox.Text)
+            };
+            usersCol.Update(userUpdate);
+        }
+
         db.Dispose();
         LoadDataToList();
     }
@@ -81,6 +98,27 @@ public partial class SettingsPanel : UserControl
             }
             db.Dispose();
             LoadDataToList();
+        }
+    }
+
+    private void ClearButton_Click(object sender, EventArgs e)
+    {
+        selectedID.ResetText();
+        FirstNameTextField.ResetText();
+        SecondNameTextField.ResetText();
+        NameTextField.ResetText();
+        EmailTextField.ResetText();
+    }
+
+    private void UserGridView_SelectionChanged(object sender, EventArgs e)
+    {
+        if (UserGridView.SelectedRows.Count > 0)
+        {
+            selectedID.Text = (string)UserGridView.SelectedRows[0].Cells[0].Value;
+            FirstNameTextField.Text = (string)UserGridView.SelectedRows[0].Cells[1].Value;
+            SecondNameTextField.Text = (string)UserGridView.SelectedRows[0].Cells[2].Value;
+            NameTextField.Text = (string)UserGridView.SelectedRows[0].Cells[3].Value;
+            EmailTextField.Text = (string)UserGridView.SelectedRows[0].Cells[4].Value;
         }
     }
 }
