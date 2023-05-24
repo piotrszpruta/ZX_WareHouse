@@ -248,7 +248,7 @@
             ProductGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             ProductGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ProductGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            ProductGridView.BackgroundColor = Color.FromArgb(43, 42, 41);
+            ProductGridView.BackgroundColor = Color.FromArgb(29, 29, 28);
             ProductGridView.BorderStyle = BorderStyle.None;
             ProductGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             ProductGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
