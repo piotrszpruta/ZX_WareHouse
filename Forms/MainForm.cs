@@ -27,4 +27,10 @@ public partial class MainForm : Form
         FillPanelContainer.Controls.Clear();
         FillPanelContainer.Controls.Add(new WarehousePanel() { Dock = DockStyle.Fill });
     }
+
+    private void ReleaseHistoryButton_Click(object sender, EventArgs e)
+    {
+        FillPanelContainer.Controls.Clear();
+        FillPanelContainer.Controls.Add(new HistoryPanel() { Dock = DockStyle.Fill });
+    }
 }

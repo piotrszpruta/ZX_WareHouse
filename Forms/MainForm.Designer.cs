@@ -34,6 +34,7 @@
             LoginUserLabel = new Label();
             WarehouseButton = new Button();
             UsersButton = new Button();
+            ReleaseHistoryButton = new Button();
             FillPanelContainer = new Panel();
             NavigationPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -45,6 +46,7 @@
             NavigationPanel.Controls.Add(panel1);
             NavigationPanel.Controls.Add(WarehouseButton);
             NavigationPanel.Controls.Add(UsersButton);
+            NavigationPanel.Controls.Add(ReleaseHistoryButton);
             NavigationPanel.Dock = DockStyle.Left;
             NavigationPanel.FlowDirection = FlowDirection.TopDown;
             NavigationPanel.Location = new Point(0, 0);
@@ -104,6 +106,23 @@
             UsersButton.UseVisualStyleBackColor = false;
             UsersButton.Click += UsersButton_Click;
             // 
+            // ReleaseHistoryButton
+            // 
+            ReleaseHistoryButton.BackColor = Color.FromArgb(29, 29, 28);
+            ReleaseHistoryButton.Cursor = Cursors.Hand;
+            ReleaseHistoryButton.Dock = DockStyle.Left;
+            ReleaseHistoryButton.FlatAppearance.BorderSize = 0;
+            ReleaseHistoryButton.FlatStyle = FlatStyle.Flat;
+            ReleaseHistoryButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            ReleaseHistoryButton.ForeColor = Color.White;
+            ReleaseHistoryButton.Location = new Point(3, 126);
+            ReleaseHistoryButton.Name = "ReleaseHistoryButton";
+            ReleaseHistoryButton.Size = new Size(197, 37);
+            ReleaseHistoryButton.TabIndex = 4;
+            ReleaseHistoryButton.Text = "Release history";
+            ReleaseHistoryButton.UseVisualStyleBackColor = false;
+            ReleaseHistoryButton.Click += ReleaseHistoryButton_Click;
+            // 
             // FillPanelContainer
             // 
             FillPanelContainer.BackColor = Color.FromArgb(43, 42, 41);
@@ -139,5 +158,7 @@
         private Panel panel1;
         private Label LoginUserLabel;
         private Panel FillPanelContainer;
+        private Button button1;
+        private Button ReleaseHistoryButton;
     }
 }
