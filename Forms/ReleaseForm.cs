@@ -90,12 +90,34 @@ public partial class ReleaseForm : Form
 
         foreach (DataGridViewRow item in ProductGridView.Rows)
         {
-            productList.Add(new Product
+            // Update warehouse status
+            string prodModel = (string)item.Cells[1].Value;
+            decimal prodQuantity = (decimal)item.Cells[2].Value;
+            var productCol = db.GetCollection<Product>("products");
+            var product = productCol.FindOne(y => y.Model.Equals(prodModel));
+
+            var updatedProd = new Product
             {
-                Model = (string)item.Cells[1].Value,
-                NettoPrice = (decimal)item.Cells[2].Value,
+                Id = product.Id,
+                Model = prodModel,
+                Provider = product.Provider,
+                Quantity = product.Quantity - prodQuantity,
+                NettoPrice = product.NettoPrice,
+                Unit = product.Unit,
+                Vat = product.Vat,
+            };
+
+            productCol.Update(updatedProd);
+
+            // Insert data to db
+            var prod = new Product
+            {
+                Model = prodModel,
+                Quantity = prodQuantity,
                 Unit = (string)item.Cells[3].Value,
-            });
+            };
+
+            productList.Add(prod);
         }
 
         var data = new History
