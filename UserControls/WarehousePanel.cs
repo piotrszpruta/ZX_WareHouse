@@ -1,4 +1,6 @@
-﻿namespace ZX_WareHouse.UserControls;
+﻿using ZX_WareHouse.Forms;
+
+namespace ZX_WareHouse.UserControls;
 
 public partial class WarehousePanel : UserControl
 {
@@ -78,5 +80,6 @@ public partial class WarehousePanel : UserControl
     {
         ReleaseForm releaseForm = new();
         releaseForm.Show();
+        releaseForm.FormClosed += delegate { LoadDatabaseProducts(); };
     }
 }
