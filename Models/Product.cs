@@ -6,7 +6,7 @@ public class Product
     public string SKU { get; set; }
     public string Model { get; set; }
     public string Provider { get; set; }
-    public double Quantity { get; set; }
+    public decimal Quantity { get; set; }
     public string Unit { get; set; }
     public decimal NettoPrice { get; set; }
     public decimal Vat { get; set; }

@@ -62,6 +62,7 @@
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(43, 42, 41);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             HistoryGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            HistoryGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             HistoryGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             HistoryGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             HistoryGridView.BackgroundColor = Color.FromArgb(43, 42, 41);
@@ -69,7 +70,6 @@
             HistoryGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             HistoryGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             HistoryGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            HistoryGridView.Dock = DockStyle.Bottom;
             HistoryGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             HistoryGridView.GridColor = Color.FromArgb(43, 42, 41);
             HistoryGridView.Location = new Point(0, 33);

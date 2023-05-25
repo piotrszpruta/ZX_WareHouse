@@ -53,7 +53,7 @@ public partial class WarehousePanel : UserControl
                 Id = Convert.ToInt32(selectedRow.Cells[0].Value),
                 Model = selectedRow.Cells[1].Value.ToString(),
                 Provider = selectedRow.Cells[2].Value.ToString(),
-                Quantity = Convert.ToDouble(selectedRow.Cells[3].Value),
+                Quantity = Convert.ToDecimal(selectedRow.Cells[3].Value),
                 Unit = selectedRow.Cells[4].Value.ToString(),
                 NettoPrice = Convert.ToDecimal(selectedRow.Cells[5].Value),
                 Vat = Convert.ToInt32(selectedRow.Cells[6].Value),

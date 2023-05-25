@@ -48,7 +48,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(3, 39);
+            label1.Location = new Point(3, 50);
             label1.Name = "label1";
             label1.Size = new Size(120, 30);
             label1.TabIndex = 1;
@@ -63,9 +63,9 @@
             groupBox1.FlatStyle = FlatStyle.Popup;
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(4, 72);
+            groupBox1.Location = new Point(4, 83);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(614, 336);
+            groupBox1.Size = new Size(614, 325);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Products";
@@ -125,7 +125,7 @@
             ProductGridView.ShowCellToolTips = false;
             ProductGridView.ShowEditingIcon = false;
             ProductGridView.ShowRowErrors = false;
-            ProductGridView.Size = new Size(608, 308);
+            ProductGridView.Size = new Size(608, 297);
             ProductGridView.TabIndex = 0;
             ProductGridView.DoubleClick += ProductGridView_DoubleClick;
             // 
@@ -137,7 +137,7 @@
             menuStrip1.Padding = new Padding(6, 0, 0, 0);
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
             menuStrip1.RightToLeft = RightToLeft.No;
-            menuStrip1.Size = new Size(620, 39);
+            menuStrip1.Size = new Size(620, 43);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "Menu";
             // 
@@ -145,6 +145,7 @@
             // 
             newDeliveryToolStripMenuItem.BackColor = Color.FromArgb(29, 29, 28);
             newDeliveryToolStripMenuItem.ForeColor = Color.White;
+            newDeliveryToolStripMenuItem.Margin = new Padding(2);
             newDeliveryToolStripMenuItem.Name = "newDeliveryToolStripMenuItem";
             newDeliveryToolStripMenuItem.Size = new Size(87, 39);
             newDeliveryToolStripMenuItem.Text = "New delivery";
@@ -154,6 +155,7 @@
             // 
             newTakeOutToolStripMenuItem.BackColor = Color.FromArgb(29, 29, 28);
             newTakeOutToolStripMenuItem.ForeColor = Color.White;
+            newTakeOutToolStripMenuItem.Margin = new Padding(2);
             newTakeOutToolStripMenuItem.Name = "newTakeOutToolStripMenuItem";
             newTakeOutToolStripMenuItem.Padding = new Padding(10);
             newTakeOutToolStripMenuItem.Size = new Size(94, 39);
