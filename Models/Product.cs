@@ -8,6 +8,6 @@ public class Product
     public string Provider { get; set; }
     public double Quantity { get; set; }
     public string Unit { get; set; }
-    public double NettoPrice { get; set; }
-    public double Vat { get; set; }
+    public decimal NettoPrice { get; set; }
+    public decimal Vat { get; set; }
 }

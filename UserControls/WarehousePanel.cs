@@ -33,7 +33,7 @@ public partial class WarehousePanel : UserControl
         dt.Columns.Add("Brutto price");
         foreach (Product product in productList)
         {
-            double bruttoPrice = product.NettoPrice + (product.NettoPrice * product.Vat / 100);
+            decimal bruttoPrice = product.NettoPrice + (product.NettoPrice * product.Vat / 100);
             bruttoPrice = Math.Round(bruttoPrice, 2);
             dt.Rows.Add(product.Id, product.Model, product.Provider, product.Quantity, product.Unit, product.NettoPrice, product.Vat, bruttoPrice);
         }
@@ -55,7 +55,7 @@ public partial class WarehousePanel : UserControl
                 Provider = selectedRow.Cells[2].Value.ToString(),
                 Quantity = Convert.ToDouble(selectedRow.Cells[3].Value),
                 Unit = selectedRow.Cells[4].Value.ToString(),
-                NettoPrice = Convert.ToDouble(selectedRow.Cells[5].Value),
+                NettoPrice = Convert.ToDecimal(selectedRow.Cells[5].Value),
                 Vat = Convert.ToInt32(selectedRow.Cells[6].Value),
             };
             WarehouseProduct warehouseProduct = new()

@@ -48,9 +48,9 @@ public partial class WarehouseProduct : Form
         {
             Model = ModelTextField.Text,
             Provider = ProviderTextBox.Text,
-            NettoPrice = Convert.ToDouble(NettoTextBox.Text),
+            NettoPrice = Convert.ToDecimal(NettoTextBox.Text),
             Quantity = Convert.ToDouble(QuantityTextBox.Text),
-            Vat = Convert.ToDouble(VatComboBox.Text),
+            Vat = Convert.ToDecimal(VatComboBox.Text),
             Unit = UnitComboBox.Text,
         };
 
