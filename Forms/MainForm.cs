@@ -14,6 +14,8 @@ public partial class MainForm : Form
     private void MainForm_Load(object sender, EventArgs e)
     {
         LoginUserLabel.Text = "Logged as: " + userName;
+        //Show default view
+        WarehouseButton_Click(this, e);
     }
 
     private void UsersButton_Click(object sender, EventArgs e)
