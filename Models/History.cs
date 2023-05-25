@@ -3,13 +3,10 @@
 public class History
 {
     public int Id { get; set; }
-    public string Model { get; set; }
-    public string Provider { get; set; }
-    public double Quantity { get; set; }
-    public string Unit { get; set; }
-    public double NettoPrice { get; set; }
-    public double Vat { get; set; }
-    public bool IsAdded { get; set; }
+    public string Company { get; set; }
+    public string NIP { get; set; }
+    public string Address { get; set; }
+    public List<Product> Products { get; set; }
     public DateTime Modified { get; set; }
     public string User { get; set; }
 }
