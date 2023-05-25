@@ -108,6 +108,7 @@ public partial class SettingsPanel : UserControl
         SecondNameTextField.ResetText();
         NameTextField.ResetText();
         EmailTextField.ResetText();
+        PasswordTextBox.ResetText();
     }
 
     private void UserGridView_SelectionChanged(object sender, EventArgs e)
@@ -119,6 +120,7 @@ public partial class SettingsPanel : UserControl
             SecondNameTextField.Text = (string)UserGridView.SelectedRows[0].Cells[2].Value;
             NameTextField.Text = (string)UserGridView.SelectedRows[0].Cells[3].Value;
             EmailTextField.Text = (string)UserGridView.SelectedRows[0].Cells[4].Value;
+            PasswordTextBox.ResetText();
         }
     }
 }

@@ -109,5 +109,7 @@ public partial class ReleaseForm : Form
 
         historyCol.Insert(data);
         db.Dispose();
+        MessageBox.Show("Products release successful!");
+        this.Close();
     }
 }

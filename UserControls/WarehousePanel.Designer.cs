@@ -37,6 +37,7 @@
             menuStrip1 = new MenuStrip();
             newDeliveryToolStripMenuItem = new ToolStripMenuItem();
             newTakeOutToolStripMenuItem = new ToolStripMenuItem();
+            label2 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ProductGridView).BeginInit();
             menuStrip1.SuspendLayout();
@@ -142,6 +143,8 @@
             // 
             // newDeliveryToolStripMenuItem
             // 
+            newDeliveryToolStripMenuItem.BackColor = Color.FromArgb(29, 29, 28);
+            newDeliveryToolStripMenuItem.ForeColor = Color.White;
             newDeliveryToolStripMenuItem.Name = "newDeliveryToolStripMenuItem";
             newDeliveryToolStripMenuItem.Size = new Size(87, 39);
             newDeliveryToolStripMenuItem.Text = "New delivery";
@@ -149,17 +152,32 @@
             // 
             // newTakeOutToolStripMenuItem
             // 
+            newTakeOutToolStripMenuItem.BackColor = Color.FromArgb(29, 29, 28);
+            newTakeOutToolStripMenuItem.ForeColor = Color.White;
             newTakeOutToolStripMenuItem.Name = "newTakeOutToolStripMenuItem";
             newTakeOutToolStripMenuItem.Padding = new Padding(10);
             newTakeOutToolStripMenuItem.Size = new Size(94, 39);
             newTakeOutToolStripMenuItem.Text = "New release";
             newTakeOutToolStripMenuItem.Click += newTakeOutToolStripMenuItem_Click;
             // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(513, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(102, 15);
+            label2.TabIndex = 4;
+            label2.Text = "Double tap to edit";
+            // 
             // WarehousePanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(43, 42, 41);
+            Controls.Add(label2);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
@@ -182,5 +200,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem newDeliveryToolStripMenuItem;
         private ToolStripMenuItem newTakeOutToolStripMenuItem;
+        private Label label2;
     }
 }

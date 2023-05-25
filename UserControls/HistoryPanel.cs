@@ -15,14 +15,13 @@ public partial class HistoryPanel : UserControl
 
         DataTable dt = new();
         dt.Columns.Add("ID");
+        dt.Columns.Add("Date");
         dt.Columns.Add("Company");
         dt.Columns.Add("NIP");
-        dt.Columns.Add("Address");
-        dt.Columns.Add("Products");
-        dt.Columns.Add("Date");
+        dt.Columns.Add("Products count");
         foreach (History history in historyList)
         {
-            dt.Rows.Add(history.Id, history.Company, history.NIP, history.Address, history.Products, history.Modified);
+            dt.Rows.Add(history.Id, history.Modified, history.Company, history.NIP, history.Products.Count);
         }
 
         HistoryGridView.DataSource = dt;
