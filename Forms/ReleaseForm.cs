@@ -80,4 +80,34 @@ public partial class ReleaseForm : Form
         selectedUnits = product.Unit;
         db.Dispose();
     }
+
+    private void SaveButton_Click(object sender, EventArgs e)
+    {
+        using LiteDatabase db = new(ConnectionHelper.dbDefaultPath);
+        var historyCol = db.GetCollection<History>("release_history");
+
+        List<Product> productList = new();
+
+        foreach (DataGridViewRow item in ProductGridView.Rows)
+        {
+            productList.Add(new Product
+            {
+                Model = (string)item.Cells[1].Value,
+                NettoPrice = (decimal)item.Cells[2].Value,
+                Unit = (string)item.Cells[3].Value,
+            });
+        }
+
+        var data = new History
+        {
+            Company = CompanyTextField.Text,
+            NIP = NipTextBox.Text,
+            Address = AddressTextBox.Text,
+            Products = productList,
+            Modified = DateTime.Now,
+        };
+
+        historyCol.Insert(data);
+        db.Dispose();
+    }
 }

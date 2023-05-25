@@ -32,7 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReleaseForm));
-            SignInButton = new Button();
+            SaveButton = new Button();
             CompanyTextField = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -53,19 +53,20 @@
             ((System.ComponentModel.ISupportInitialize)ProductGridView).BeginInit();
             SuspendLayout();
             // 
-            // SignInButton
+            // SaveButton
             // 
-            SignInButton.BackColor = Color.FromArgb(29, 29, 28);
-            SignInButton.FlatAppearance.BorderSize = 2;
-            SignInButton.FlatStyle = FlatStyle.Flat;
-            SignInButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SignInButton.ForeColor = Color.White;
-            SignInButton.Location = new Point(362, 425);
-            SignInButton.Name = "SignInButton";
-            SignInButton.Size = new Size(132, 34);
-            SignInButton.TabIndex = 4;
-            SignInButton.Text = "Save";
-            SignInButton.UseVisualStyleBackColor = false;
+            SaveButton.BackColor = Color.FromArgb(29, 29, 28);
+            SaveButton.FlatAppearance.BorderSize = 2;
+            SaveButton.FlatStyle = FlatStyle.Flat;
+            SaveButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SaveButton.ForeColor = Color.White;
+            SaveButton.Location = new Point(362, 425);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(132, 34);
+            SaveButton.TabIndex = 4;
+            SaveButton.Text = "Save";
+            SaveButton.UseVisualStyleBackColor = false;
+            SaveButton.Click += SaveButton_Click;
             // 
             // CompanyTextField
             // 
@@ -322,7 +323,7 @@
             Controls.Add(ProductComboBox);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(SignInButton);
+            Controls.Add(SaveButton);
             Controls.Add(CompanyTextField);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -355,5 +356,6 @@
         private Button AddProductToListButton;
         private DataGridView ProductGridView;
         private Label label8;
+        private Button SaveButton;
     }
 }
