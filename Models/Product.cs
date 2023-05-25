@@ -3,7 +3,6 @@
 public class Product
 {
     public int Id { get; set; }
-    public string SKU { get; set; }
     public string Model { get; set; }
     public string Provider { get; set; }
     public decimal Quantity { get; set; }
