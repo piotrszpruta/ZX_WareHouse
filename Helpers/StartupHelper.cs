@@ -87,7 +87,7 @@ class StartupHelper
 
         var demo3 = new Product
         {
-            Model = "Demo product #1",
+            Model = "Demo product #2",
             Provider = "Second provider",
             Quantity = 690,
             Vat = 23,
