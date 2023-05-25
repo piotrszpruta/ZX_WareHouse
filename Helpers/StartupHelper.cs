@@ -6,6 +6,9 @@ class StartupHelper
     {
         if (!File.Exists(ConnectionHelper.dbDefaultPath))
         {
+            bool isSelected = false;
+            while (!isSelected)
+            {
             var pathCheck = MessageBox.Show("You don't have database created. Do you want to select the file? (If no then default database will be created)", "Database unavailable", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 
             if (pathCheck == DialogResult.Yes)
@@ -13,6 +16,8 @@ class StartupHelper
                 OpenFileDialog selectPath = new();
                 selectPath.ShowDialog();
                 ConnectionHelper.dbDefaultPath = selectPath.FileName;
+                    if (selectPath.FileName != "")
+                        isSelected = true;
             }
             else if (pathCheck == DialogResult.No)
             {
@@ -24,7 +29,9 @@ class StartupHelper
                 }
                 // Create default user and database is created
                 InsertDefaultUser();
+                    isSelected = true;
             }
+        }
         }
         else
         {
