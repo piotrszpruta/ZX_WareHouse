@@ -18,9 +18,11 @@ class StartupHelper
                 {
                     OpenFileDialog selectPath = new();
                     selectPath.ShowDialog();
-                    ConnectionHelper.dbDefaultPath = selectPath.FileName;
                     if (selectPath.FileName != "")
+                    {
+                        ConnectionHelper.dbDefaultPath = selectPath.FileName;
                         isSelected = true;
+                    }
                 }
                 else if (pathCheck == DialogResult.No)
                 {
