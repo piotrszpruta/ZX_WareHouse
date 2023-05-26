@@ -18,13 +18,15 @@ public partial class LoginForm : Form
 
         string hashedPassword = HashPassword.SHA254Hash(PasswordTextField.Text);
         bool isCorrect = ConnectionHelper.CheckUserCredentials(LoginTextField.Text, hashedPassword);
+        int permissions = ConnectionHelper.CheckUserPermissions(LoginTextField.Text);
         if (isCorrect)
         {
             Hide();
             MainForm dashboard = new()
             {
                 UserName = LoginTextField.Text,
-                LoginForm = this
+                LoginForm = this,
+                UserPermission = permissions
             };
             dashboard.FormClosing += delegate { this.Close(); };
             dashboard.Show();

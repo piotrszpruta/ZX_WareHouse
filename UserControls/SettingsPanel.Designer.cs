@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             ClearButton = new Button();
             RemoveUserButton = new Button();
@@ -46,6 +46,8 @@
             groupBox1 = new GroupBox();
             UserGridView = new DataGridView();
             label1 = new Label();
+            AdministratorRadioButton = new RadioButton();
+            ModeratorRadioButton = new RadioButton();
             panel1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -117,6 +119,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(ModeratorRadioButton);
+            groupBox2.Controls.Add(AdministratorRadioButton);
             groupBox2.Controls.Add(selectedID);
             groupBox2.Controls.Add(GeneratePasswordButton);
             groupBox2.Controls.Add(PasswordTextBox);
@@ -149,9 +153,9 @@
             GeneratePasswordButton.FlatAppearance.BorderColor = Color.White;
             GeneratePasswordButton.FlatAppearance.BorderSize = 2;
             GeneratePasswordButton.FlatStyle = FlatStyle.Flat;
-            GeneratePasswordButton.Location = new Point(226, 95);
+            GeneratePasswordButton.Location = new Point(39, 123);
             GeneratePasswordButton.Name = "GeneratePasswordButton";
-            GeneratePasswordButton.Size = new Size(170, 40);
+            GeneratePasswordButton.Size = new Size(170, 33);
             GeneratePasswordButton.TabIndex = 6;
             GeneratePasswordButton.Text = "Generate password";
             GeneratePasswordButton.UseVisualStyleBackColor = false;
@@ -163,7 +167,7 @@
             PasswordTextBox.BorderStyle = BorderStyle.FixedSingle;
             PasswordTextBox.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             PasswordTextBox.ForeColor = Color.White;
-            PasswordTextBox.Location = new Point(39, 100);
+            PasswordTextBox.Location = new Point(39, 83);
             PasswordTextBox.Margin = new Padding(30);
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.PlaceholderText = "Password";
@@ -176,7 +180,7 @@
             SecondNameTextField.BorderStyle = BorderStyle.FixedSingle;
             SecondNameTextField.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             SecondNameTextField.ForeColor = Color.White;
-            SecondNameTextField.Location = new Point(417, 100);
+            SecondNameTextField.Location = new Point(234, 83);
             SecondNameTextField.Margin = new Padding(30);
             SecondNameTextField.Name = "SecondNameTextField";
             SecondNameTextField.PlaceholderText = "Last name";
@@ -189,7 +193,7 @@
             FirstNameTextField.BorderStyle = BorderStyle.FixedSingle;
             FirstNameTextField.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             FirstNameTextField.ForeColor = Color.White;
-            FirstNameTextField.Location = new Point(417, 45);
+            FirstNameTextField.Location = new Point(234, 45);
             FirstNameTextField.Margin = new Padding(30);
             FirstNameTextField.Name = "FirstNameTextField";
             FirstNameTextField.PlaceholderText = "Firstname";
@@ -202,7 +206,7 @@
             EmailTextField.BorderStyle = BorderStyle.FixedSingle;
             EmailTextField.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             EmailTextField.ForeColor = Color.White;
-            EmailTextField.Location = new Point(226, 45);
+            EmailTextField.Location = new Point(417, 45);
             EmailTextField.Margin = new Padding(30);
             EmailTextField.Name = "EmailTextField";
             EmailTextField.PlaceholderText = "Email";
@@ -242,13 +246,13 @@
             UserGridView.AllowUserToDeleteRows = false;
             UserGridView.AllowUserToResizeColumns = false;
             UserGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 42, 41);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(43, 42, 41);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            UserGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(43, 42, 41);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(43, 42, 41);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            UserGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             UserGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             UserGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             UserGridView.BackgroundColor = Color.FromArgb(43, 42, 41);
@@ -263,22 +267,22 @@
             UserGridView.MultiSelect = false;
             UserGridView.Name = "UserGridView";
             UserGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(43, 42, 41);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            UserGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(43, 42, 41);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            UserGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             UserGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 42, 41);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(43, 42, 41);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            UserGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(43, 42, 41);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(43, 42, 41);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            UserGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             UserGridView.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             UserGridView.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(43, 42, 41);
             UserGridView.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
@@ -306,6 +310,30 @@
             label1.TabIndex = 0;
             label1.Text = "Users Management";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // AdministratorRadioButton
+            // 
+            AdministratorRadioButton.AutoSize = true;
+            AdministratorRadioButton.Location = new Point(417, 86);
+            AdministratorRadioButton.Name = "AdministratorRadioButton";
+            AdministratorRadioButton.Size = new Size(134, 25);
+            AdministratorRadioButton.TabIndex = 8;
+            AdministratorRadioButton.Text = "Administrator";
+            AdministratorRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // ModeratorRadioButton
+            // 
+            ModeratorRadioButton.AutoSize = true;
+            ModeratorRadioButton.Checked = true;
+            ModeratorRadioButton.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 128);
+            ModeratorRadioButton.FlatAppearance.BorderSize = 4;
+            ModeratorRadioButton.Location = new Point(417, 123);
+            ModeratorRadioButton.Name = "ModeratorRadioButton";
+            ModeratorRadioButton.Size = new Size(109, 25);
+            ModeratorRadioButton.TabIndex = 9;
+            ModeratorRadioButton.TabStop = true;
+            ModeratorRadioButton.Text = "Moderator";
+            ModeratorRadioButton.UseVisualStyleBackColor = true;
             // 
             // SettingsPanel
             // 
@@ -341,5 +369,7 @@
         private DataGridView UserGridView;
         private Button ClearButton;
         private Label selectedID;
+        private RadioButton ModeratorRadioButton;
+        private RadioButton AdministratorRadioButton;
     }
 }

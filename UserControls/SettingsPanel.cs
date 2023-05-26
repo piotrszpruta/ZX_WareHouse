@@ -23,9 +23,16 @@ public partial class SettingsPanel : UserControl
         dt.Columns.Add("Last name");
         dt.Columns.Add("Login");
         dt.Columns.Add("Email");
+        dt.Columns.Add("Permissions");
         foreach (User user in users)
         {
-            dt.Rows.Add(user.Id, user.FirstName, user.LastName, user.Name, user.Email);
+            string permissionName = "";
+            if (user.Permission == 1)
+                permissionName = "Administrator";
+            else
+                permissionName = "Moderator";
+
+            dt.Rows.Add(user.Id, user.FirstName, user.LastName, user.Name, user.Email, permissionName);
         }
 
         UserGridView.DataSource = dt;
@@ -36,6 +43,7 @@ public partial class SettingsPanel : UserControl
     {
         using LiteDatabase db = new(connectionString: ConnectionHelper.dbDefaultPath);
         var usersCol = db.GetCollection<User>("users");
+        int permissionSelected = AdministratorRadioButton.Checked ? 1 : 3;
         if (string.IsNullOrEmpty(selectedID.Text))
         {
             usersCol.Insert(new User
@@ -44,7 +52,8 @@ public partial class SettingsPanel : UserControl
                 Email = EmailTextField.Text,
                 FirstName = FirstNameTextField.Text,
                 LastName = SecondNameTextField.Text,
-                Password = HashPassword.SHA254Hash(PasswordTextBox.Text)
+                Password = HashPassword.SHA254Hash(PasswordTextBox.Text),
+                Permission = permissionSelected,
             });
         }
         else
@@ -56,7 +65,8 @@ public partial class SettingsPanel : UserControl
                 Email = EmailTextField.Text,
                 FirstName = FirstNameTextField.Text,
                 LastName = SecondNameTextField.Text,
-                Password = HashPassword.SHA254Hash(PasswordTextBox.Text)
+                Password = HashPassword.SHA254Hash(PasswordTextBox.Text),
+                Permission = permissionSelected,
             };
             usersCol.Update(userUpdate);
         }
@@ -121,6 +131,14 @@ public partial class SettingsPanel : UserControl
             NameTextField.Text = (string)UserGridView.SelectedRows[0].Cells[3].Value;
             EmailTextField.Text = (string)UserGridView.SelectedRows[0].Cells[4].Value;
             PasswordTextBox.ResetText();
+            if ((string)UserGridView.SelectedRows[0].Cells[5].Value == "Administrator")
+            {
+                AdministratorRadioButton.Checked = true;
+            }
+            else
+            {
+                ModeratorRadioButton.Checked = true;
+            }
         }
     }
 }

@@ -50,15 +50,27 @@ class StartupHelper
         using LiteDatabase db = new(ConnectionHelper.dbDefaultPath);
         // Insert demo user
         var usersCol = db.GetCollection<User>("users");
-        var user = new User
+        var userAdmin = new User
         {
             FirstName = "Test",
             LastName = "User",
             Name = "admin",
             Password = HashPassword.SHA254Hash("admin"),
-            Email = "admin@admin.com"
+            Email = "admin@admin.com",
+            Permission = 1
         };
-        usersCol.Insert(user);
+        usersCol.Insert(userAdmin);
+
+        var userMod = new User
+        {
+            FirstName = "Test",
+            LastName = "User",
+            Name = "moderator",
+            Password = HashPassword.SHA254Hash("moderator"),
+            Email = "moderator@mod.com",
+            Permission = 3
+        };
+        usersCol.Insert(userMod);
 
         // Insert demo products
         var productsCol = db.GetCollection<Product>("products");
